@@ -32,6 +32,7 @@ function App() {
           <Route path="/up" element={<UpComing/>} />
           <Route path="/movie/:id" element={<MovieDetailPage/>} />
           <Route path="/login/auth" element={<LoginPage />} />
+          <Route path="/oauth/kakao/callback" element={<LoginPage />} />
           <Route path="*" element={<NotFoundPage/>} />
         </Routes>
         <Footer/>
