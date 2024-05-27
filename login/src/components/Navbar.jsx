@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { NavLink, useLocation } from "react-router-dom";
 import ShareKakao from "../api/ShareKakao";
 import axios from "axios";
+import { getRedirectURI } from "../api/RedirectURI";
 
 const NavContainer = styled.div`
     width: 100%;
@@ -67,19 +68,24 @@ const Navbar = () => {
     }, []);
 
     const handleLogout = async () => {
-        const accessToken = localStorage.getItem('token');
+        // const accessToken = localStorage.getItem('token');
+        const client_id = import.meta.env.VITE_KAKAO_REST_API;
+        const logout_redirect_uri = getRedirectURI();
+        const kakaoLogoutURL = `https://kauth.kakao.com/oauth/logout?client_id=${client_id}&logout_redirect_uri=${logout_redirect_uri}`;
 
         try {
-            await axios.get('https://kapi.kakao.com/v1/user/logout', {
+            /* await axios.get('https://kapi.kakao.com/v1/user/logout', {
                 headers: {
                     'Authorization': `Bearer ${accessToken}`
                 }
-            });
+            }); */
             
             localStorage.removeItem('token');
             localStorage.removeItem('username');
             setIsLogin(false);
-            window.location.reload();
+            
+            // window.location.reload();
+            window.location.href = kakaoLogoutURL;
         } catch (error) {
             console.error('Error: ', error);
         }
