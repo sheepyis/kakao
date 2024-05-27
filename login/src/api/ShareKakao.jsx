@@ -36,16 +36,16 @@ const ShareKakao = () => {
             description: '#UMC #6기 #한성대 #Web #10주차',  // 카카오톡 상세 설명
             imageUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-ei3HfkIzsdcQqamoePEOS48-kG0CGesM3Mjv6yxxg&s',    // 카카오톡 이미지
             link: {
-            mobileWebUrl: 'https://hansung-kakao.netlify.app/', // 배포 링크
-            webUrl: 'https://hansung-kakao.netlify.app/',   // 배포 링크
+            mobileWebUrl: 'https://hansung-kakao-login.netlify.app/', // 배포 링크
+            webUrl: 'https://hansung-kakao-login.netlify.app/',   // 배포 링크
             },
         },
         buttons: [
             {
             title: '영화 찾아보러 가기',    // 카카오톡 버튼
             link: {
-                mobileWebUrl: 'https://hansung-kakao.netlify.app/', // 배포 링크
-                webUrl: 'https://hansung-kakao.netlify.app/',   // 배포 링크
+                mobileWebUrl: 'https://hansung-kakao-login.netlify.app/', // 배포 링크
+                webUrl: 'https://hansung-kakao-login.netlify.app/',   // 배포 링크
             },
             },
         ],
