@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { NavLink, useLocation } from "react-router-dom";
-import KakaoImage from "../assets/images/kakao.png";
-import {ShareKakao} from "../api/ShareKakao";
+import ShareKakao from "../api/ShareKakao";
 
 const NavContainer = styled.div`
     width: 100%;
@@ -51,11 +50,6 @@ const LogoContainer = styled.div`
     gap: 0.5vw;
 `
 
-const KakaoImg = styled.img`
-    width: 1.5vw;
-    cursor: pointer;
-`
-
 const Navbar = () => {
     const location = useLocation();
     const [isLogin, setIsLogin] = useState(false);
@@ -82,7 +76,7 @@ const Navbar = () => {
             <NavContainer2>
                 <LogoContainer>
                     <NavP to="/">UMC Movie</NavP>
-                    <KakaoImg src={KakaoImage} alt="kakao" onClick={ShareKakao}/>
+                    <ShareKakao/>
                 </LogoContainer>
                 <NavPContainer>
                     {isLogin ? (
