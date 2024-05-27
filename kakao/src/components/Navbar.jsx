@@ -48,12 +48,11 @@ const NavP2 = styled(NavP)`
 const LogoContainer = styled.div`
     display: flex;
     align-items: cneter;
-    gap: 1vw;
+    gap: 0.5vw;
 `
 
 const KakaoImg = styled.img`
     width: 1.5vw;
-    height: 1.5vw;
     cursor: pointer;
 `
 
@@ -83,7 +82,7 @@ const Navbar = () => {
             <NavContainer2>
                 <LogoContainer>
                     <NavP to="/">UMC Movie</NavP>
-                    <KakaoImg src={KakaoImage} alt="kakao" onClick={() => ShareKakao}/>
+                    <KakaoImg src={KakaoImage} alt="kakao" onClick={ShareKakao}/>
                 </LogoContainer>
                 <NavPContainer>
                     {isLogin ? (
