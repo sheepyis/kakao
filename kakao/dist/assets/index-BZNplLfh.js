@@ -80,19 +80,22 @@ Error generating stack: `+i.message+`
     a {
         text-decoration: none;
     }
-`,gy="/assets/kakao-Cs_dHsXD.png",vy=()=>{if(!window.Kakao){console.error("Kakao SDK is not loaded");return}const e=window.Kakao,t="ed14a33bbf964e60e9eafbe3717d0b44";if(console.log(t),e.isInitialized()||e.init(t),!e.Link){console.error("Kakao Link module is not available");return}e.Link.sendDefault({objectType:"feed",content:{title:"movie",description:"#UMC #6기 #한성대 #Web #10주차",imageUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-ei3HfkIzsdcQqamoePEOS48-kG0CGesM3Mjv6yxxg&s",link:{mobileWebUrl:"https://hansung-kakao.netlify.app/",webUrl:"https://hansung-kakao.netlify.app/"}},buttons:[{title:"영화 찾아보러 가기",link:{mobileWebUrl:"https://hansung-kakao.netlify.app/",webUrl:"https://hansung-kakao.netlify.app/"}}]})},yy=T.div`
+`,gy="/assets/kakao-Cs_dHsXD.png",vy=T.img`
+    width: 1.5vw;
+    cursor: pointer;
+`,yy=()=>{E.useEffect(()=>{if(!window.Kakao){console.error("Kakao SDK is not loaded");return}const t=window.Kakao,n="aeedc6abd252e55358a34d98235996f9";console.log(n),t.isInitialized()||t.init(n)},[]);const e=()=>{if(!window.Kakao||!window.Kakao.Link){console.error("Kakao SDK or Link module is not available");return}window.Kakao.Link.sendDefault({objectType:"feed",content:{title:"영화 검색 사이트",description:"#UMC #6기 #한성대 #Web #10주차",imageUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-ei3HfkIzsdcQqamoePEOS48-kG0CGesM3Mjv6yxxg&s",link:{mobileWebUrl:"https://hansung-kakao.netlify.app/",webUrl:"https://hansung-kakao.netlify.app/"}},buttons:[{title:"영화 찾아보러 가기",link:{mobileWebUrl:"https://hansung-kakao.netlify.app/",webUrl:"https://hansung-kakao.netlify.app/"}}]})};return w.jsx(vy,{src:gy,alt:"kakao",onClick:e})},wy=T.div`
     width: 100%;
     height: 4vw;
     background-color: #040E40;
     display: flex;
     align-items: center;
     justify-content: center;
-`,wy=T.div`
+`,Sy=T.div`
     width: 93%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-`,Sy=T.div`
+`,xy=T.div`
     width: 40%;
     display: flex;
     justify-content: space-between;
@@ -111,14 +114,11 @@ Error generating stack: `+i.message+`
     &.active {
         color: #FFCC15;
     }
-`,xy=T.div`
+`,Ey=T.div`
     display: flex;
     align-items: cneter;
     gap: 0.5vw;
-`,Ey=T.img`
-    width: 1.5vw;
-    cursor: pointer;
-`,ky=()=>{const e=Zt(),[t,n]=E.useState(!1);if(!(e.pathname==="/"||e.pathname==="/signup"||e.pathname==="/login"||e.pathname==="/popular"||e.pathname==="/now"||e.pathname==="/top"||e.pathname==="/up"||e.pathname.startsWith("/movie/")))return null;E.useEffect(()=>{const i=localStorage.getItem("token");n(!!i)},[]);const o=()=>{localStorage.removeItem("token"),localStorage.removeItem("username"),n(!1)};return w.jsx(yy,{children:w.jsxs(wy,{children:[w.jsxs(xy,{children:[w.jsx(ph,{to:"/",children:"UMC Movie"}),w.jsx(Ey,{src:gy,alt:"kakao",onClick:vy})]}),w.jsxs(Sy,{children:[t?w.jsx(w.Fragment,{children:w.jsx(on,{to:"/",onClick:o,children:"로그아웃"})}):w.jsxs(w.Fragment,{children:[w.jsx(on,{to:"/login",children:"로그인"}),w.jsx(on,{to:"/signup",children:"회원가입"})]}),w.jsx(on,{to:"/popular",children:"Popular"}),w.jsx(on,{to:"/now",children:"Now Playing"}),w.jsx(on,{to:"/top",children:"Top Rated"}),w.jsx(on,{to:"/up",children:"Upcoming"})]})]})})},Cy=T.div`
+`,ky=()=>{const e=Zt(),[t,n]=E.useState(!1);if(!(e.pathname==="/"||e.pathname==="/signup"||e.pathname==="/login"||e.pathname==="/popular"||e.pathname==="/now"||e.pathname==="/top"||e.pathname==="/up"||e.pathname.startsWith("/movie/")))return null;E.useEffect(()=>{const i=localStorage.getItem("token");n(!!i)},[]);const o=()=>{localStorage.removeItem("token"),localStorage.removeItem("username"),n(!1)};return w.jsx(wy,{children:w.jsxs(Sy,{children:[w.jsxs(Ey,{children:[w.jsx(ph,{to:"/",children:"UMC Movie"}),w.jsx(yy,{})]}),w.jsxs(xy,{children:[t?w.jsx(w.Fragment,{children:w.jsx(on,{to:"/",onClick:o,children:"로그아웃"})}):w.jsxs(w.Fragment,{children:[w.jsx(on,{to:"/login",children:"로그인"}),w.jsx(on,{to:"/signup",children:"회원가입"})]}),w.jsx(on,{to:"/popular",children:"Popular"}),w.jsx(on,{to:"/now",children:"Now Playing"}),w.jsx(on,{to:"/top",children:"Top Rated"}),w.jsx(on,{to:"/up",children:"Upcoming"})]})]})})},Cy=T.div`
     width: 100%;
     height: 2vw;
     background-color: #FFCC15;
