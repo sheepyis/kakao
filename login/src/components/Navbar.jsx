@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { NavLink, useLocation } from "react-router-dom";
 import ShareKakao from "../api/ShareKakao";
+import axios from "axios";
 
 const NavContainer = styled.div`
     width: 100%;
@@ -65,11 +66,23 @@ const Navbar = () => {
         setIsLogin(!!token);
     }, []);
 
-    const handleLogout = () => {
-        localStorage.removeItem('token');
-        localStorage.removeItem('username');
-        setIsLogin(false);
-        window.location.reload();
+    const handleLogout = async () => {
+        const accessToken = localStorage.getItem('token');
+
+        try {
+            await axios.get('https://kapi.kakao.com/v1/user/logout', {
+                headers: {
+                    'Authorization': `Bearer ${accessToken}`
+                }
+            });
+            
+            localStorage.removeItem('token');
+            localStorage.removeItem('username');
+            setIsLogin(false);
+            window.location.reload();
+        } catch (error) {
+            console.error('Error: ', error);
+        }
     };
 
     return (
