@@ -18,7 +18,7 @@ const FooterP = styled.p`
 
 const Footer = () => {
     const location = useLocation();
-    const showFooter = location.pathname === '/' || location.pathname === '/signup' || location.pathname === '/login' || location.pathname === '/popular' || location.pathname === '/now' || location.pathname === "/top" || location.pathname === "/up" || location.pathname.startsWith("/movie/");
+    const showFooter = location.pathname === '/' || location.pathname === '/signup' || location.pathname === '/login' || location.pathname === '/popular' || location.pathname === '/now' || location.pathname === "/top" || location.pathname === "/up" || location.pathname.startsWith("/movie/") || location.pathname.startsWith("/login/auth");
 
     if (!showFooter) {
         return null;

@@ -31,6 +31,7 @@ function App() {
           <Route path="/top" element={<TopRatedPage/>} />
           <Route path="/up" element={<UpComing/>} />
           <Route path="/movie/:id" element={<MovieDetailPage/>} />
+          <Route path="/login/auth" element={<LoginPage />} />
           <Route path="*" element={<NotFoundPage/>} />
         </Routes>
         <Footer/>

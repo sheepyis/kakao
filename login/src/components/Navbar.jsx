@@ -54,7 +54,7 @@ const Navbar = () => {
     const location = useLocation();
     const [isLogin, setIsLogin] = useState(false);
 
-    const showNav = location.pathname === '/' || location.pathname === '/signup' || location.pathname === '/login' || location.pathname === '/popular' || location.pathname === '/now' || location.pathname === "/top" || location.pathname === "/up" || location.pathname.startsWith("/movie/");
+    const showNav = location.pathname === '/' || location.pathname === '/signup' || location.pathname === '/login' || location.pathname === '/popular' || location.pathname === '/now' || location.pathname === "/top" || location.pathname === "/up" || location.pathname.startsWith("/movie/") || location.pathname.startsWith("/login/auth");
 
     if (!showNav) {
         return null;
@@ -69,6 +69,7 @@ const Navbar = () => {
         localStorage.removeItem('token');
         localStorage.removeItem('username');
         setIsLogin(false);
+        window.location.reload();
     };
 
     return (
